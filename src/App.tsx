@@ -1,14 +1,7 @@
-import Button from './components/Button'
+import Routes from './Routes'
+
 
 export default function App() {
-
-
-  return (
-    <>
-      <Button visible={true} destructive />
-      <Button text="Salvar" onClick={()=> alert("Foi salvo")} />
-    
-    </>
-  )
+  return <Routes/>
 }
 
