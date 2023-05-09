@@ -1,14 +1,18 @@
+import { Container } from "./style"
+
 interface ButtonProps {
   text?: string
   visible?: boolean
   onClick?: ()=> void
+  destructive?: boolean
 }
 
 export default function Button({
   text = 'Cadastrar',
   visible = true,
-  onClick
+  onClick,
+  destructive
 }: ButtonProps){
   onClick
-  return <>{ visible && <button onClick={onClick}>{text}</button>}</>
+  return <>{ visible && <Container destructive={destructive} onClick={onClick}>{text}</Container>}</>
 }
