@@ -1,8 +1,9 @@
-import { createBrowserRouter, RouterProvider} from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Inicio from './pages/Inicio'
 import Login from './pages/Login'
+import CadastroPsicologo from './pages/CadastroPsicologo'
 
-export default function Routes(){
+export default function Routes() {
   const routes = createBrowserRouter([{
     path: '/',
     element: <Inicio />
@@ -10,8 +11,12 @@ export default function Routes(){
   {
     path: '/login',
     element: <Login />
+  },
+  {
+    path: '/cadastro',
+    element: <CadastroPsicologo />
   }])
 
-  return <RouterProvider router={routes}/>
+  return <RouterProvider router={routes} />
 
 }

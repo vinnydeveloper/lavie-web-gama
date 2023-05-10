@@ -4,15 +4,28 @@ import { FormEventHandler, useState } from "react";
 import Button from "../../components/Button";
 import Divisor from "../../components/Divisor";
 import { Link } from "react-router-dom";
+import { servicePsicologo } from "../../services/psicologos";
 export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const logar: FormEventHandler<HTMLFormElement> = (event) => {
+  const logar: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault()
-    console.log(email)
-    console.log(password)
-    //mandar para api
+    try {
+      const response = await servicePsicologo.login({
+        email: email,
+        senha: password,
+      })
+
+      if (response.status === 200) {
+        alert('Login Efetuado')
+        setPassword('')
+        setEmail('')
+      }
+
+    } catch (error) {
+      alert("Deu erro")
+    }
   }
 
   return <Container>
