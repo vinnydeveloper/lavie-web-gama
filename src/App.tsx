@@ -1,7 +1,7 @@
 import Routes from './Routes'
-
+import { GlobalCSS } from './Global'
 
 export default function App() {
-  return <Routes/>
+  return <><GlobalCSS /><Routes /></>
 }
 
